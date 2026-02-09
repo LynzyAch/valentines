@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="question-section">
+            <div class="image-container">
+                <img src="flowers.jpg" alt="Cute Bear Asking">
+            </div>
+            <h1>Be my Valentine?</h1>
+            <p>Yes or No?? 🌹</p>
+            
+            <div class="btn-group">
+                <button class="yes-btn" onclick="acceptLove()">Yes ❤️</button>
+                <button class="no-btn" onmouseover="moveButton()">No 💔</button>
+            </div>
+        </div>
+
+        <div class="success-message">
+            <div class="gif-container">
+                <img src="https://media.tenor.com/gUiu1zyxfzYAAAAi/bear-kiss-bear-kisses.gif" alt="Happy Bear">
+            </div>
+            <h2>Ayown! May ka-date kana!❤️</h2>
+            <p>Kita kits sa 14?</p>
+        </div>
+    </div>
+
+    <script>
+        function moveButton() {
+            const noBtn = document.querySelector('.no-btn');
+            
+            const maxWidth = window.innerWidth - noBtn.offsetWidth;
+            const maxHeight = window.innerHeight - noBtn.offsetHeight;
+
+            const randomX = Math.floor(Math.random() * maxWidth);
+            const randomY = Math.floor(Math.random() * maxHeight);
+
+            noBtn.style.position = 'fixed'; 
+            noBtn.style.left = randomX + 'px';
+            noBtn.style.top = randomY + 'px';
+        }
+
+        function acceptLove() {
+            document.querySelector('.question-section').style.display = 'none';
+            document.querySelector('.success-message').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
